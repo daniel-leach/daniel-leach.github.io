@@ -21,13 +21,14 @@ critical_fail_image = os.path.join(top, "critical_fail_small.png")
 
 
 for skill in range(30):
-    if os.path.isdir(str(skill)):
-        shutil.rmtree(str(skill))
-    os.makedirs(str(skill))
-    os.chdir(str(skill))
+    dir_name = "skill_" + str(skill)
+    if os.path.isdir(dir_name):
+        shutil.rmtree(dir_name)
+    os.makedirs(dir_name)
+    os.chdir(dir_name)
     
     for roll in range(3,19):
-        new_file_name = str(roll) + ".png"
+        new_file_name = "roll_" + str(roll) + ".png"
         if (roll == 3) or (roll == 4) or (roll == 5 and skill >=15) or (roll == 6 and skill >= 16):
             shutil.copyfile(critical_success_image, new_file_name)
         elif (roll == 17) or (roll == 18):
