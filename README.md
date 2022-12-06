@@ -1,1 +1,0 @@
-# daniel-leach.github.io
